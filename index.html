@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali_hsnnzhd | Android Developer | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="matrix-effect">
+            <div class="matrix-text"></div>
+        </div>
+        <div class="glitch-text" data-text="INITIALIZING...">INITIALIZING...</div>
+    </div>
+
+    <!-- Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="nav-logo">&lt;/&gt;</span>
+                <span class="nav-name">Ali_hsnnzhd</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">HOME</a></li>
+                <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+                <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-avatar">
+                    <div class="avatar-frame">
+                        <div class="avatar-glow"></div>
+                        <div class="avatar-placeholder">
+                            <img src="./Images/Avatar.jpg"
+                                style="width: 280px; height: 280px; object-fit: cover; border-radius: 200px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-name">
+                        <span class="glitch-text" data-text="ANDROID DEVELOPER">ANDROID DEVELOPER</span>
+                    </h1>
+                    <div class="hero-title">
+                        <span class="title-cycler" id="title-cycler"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <p class="hero-description">
+                        Crafting native Android applications with Java & XML.
+                        Building responsive web interfaces. Exploring the fundamentals of software engineering. Design
+                        UI web or mobile applications.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="4">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="6">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>SCROLL</span>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">01</span>
+                    EXPERIENCE
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h3 class="timeline-title">Android Developer</h3>
+                        <p class="timeline-description">
+                            Developing native Android applications using Java and XML.
+                            Implementing responsive UI/UX designs, managing data persistence,
+                            and optimizing app performance. Working with Android SDK,
+                            Material Design principles, and modern Android architecture patterns.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">Android SDK</span>
+                            <span class="tech-tag">Material Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3 class="timeline-title">Web Developer (Learning)</h3>
+                        <p class="timeline-description">
+                            Building responsive websites using HTML, CSS, and JavaScript.
+                            Creating modern, interactive user interfaces and learning
+                            front-end development best practices.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2019</div>
+                        <h3 class="timeline-title">Software Engineering Fundamentals</h3>
+                        <p class="timeline-description">
+                            Learning core programming concepts with C# and C++.
+                            Understanding object-oriented programming, data structures,
+                            algorithms, and software design principles.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">02</span>
+                    PROJECTS
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Tourismo</h3>
+                        <div class="project-links">
+                            <span class="project-link-icon"><a href="https://cafebazaar.ir/app/com.example.tourismo"
+                                    class="project-link-icon" style="text-decoration: none;">🔗</a></span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A smart travel companion for Iran offering offline access to tourist attractions and historical
+                        sites. Features comprehensive city guides, navigation, and a user-friendly interface.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">XML</span>
+                        <span class="tech-badge">Room Database</span>
+                    </div>
+                    <div class="project-code-snippet">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-title">MainActivity.java</span>
+                        </div>
+                        <pre class="code-content"><code class="language-java">public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        // Initialize views and setup
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">NeuroBeats</h3>
+                        <div class="project-links">
+                            <span class="project-link-icon"><a href="https://cafebazaar.ir/app/com.example.neurobeats"
+                                    class="project-link-icon" style="text-decoration: none;">🔗</a></span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        "A powerful, minimalist music player featuring a stunning visual UI and seamless performance.
+                        Includes lightning-fast search, organized local library management, and immersive playback
+                        controls."
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">XML</span>
+                        <span class="tech-badge">Room Database</span>
+                    </div>
+                    <div class="project-code-snippet">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-title">PlayerFragment.java</span>
+                        </div>
+                        <pre class="code-content"><code class="language-java">@Override
+public View onCreateView(LayoutInflater inflater, 
+                         ViewGroup container, 
+                         Bundle savedInstanceState) {
+    View view = inflater.inflate(R.layout.fragment_task, 
+                                  container, false);
+    return view;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Photo Studio</h3>
+                        <div class="project-links">
+                            <span class="project-link-icon"><a href="#"
+                                    class="project-link-icon" style="text-decoration: none;">🔗</a></span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A modern, responsive portfolio website showcasing projects and skills.
+                        Built with HTML, CSS, and JavaScript, featuring interactive animations
+                        and a clean, professional design.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                    </div>
+                    <div class="project-code-snippet">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-title">script.js</span>
+                        </div>
+                        <pre class="code-content"><code class="language-javascript">constructor() {
+        this.canvas = document.getElementById('particle-canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.mouse = { x: 0, y: 0 };
+        this.maxParticles = 100;
+        
+        this.init();
+        this.animate();
+        this.setupEventListeners();
+    }
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">03</span>
+                    SKILLS & TECH STACK
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skills-visualization">
+                    <canvas id="skills-canvas"></canvas>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-category">
+                        <h3 class="category-title">Mobile Development</h3>
+                        <div class="skill-items">
+                            <div class="skill-item" data-skill="Java" data-level="85">
+                                <div class="skill-name">Java</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                                <div class="skill-percent">85%</div>
+                            </div>
+                            <div class="skill-item" data-skill="XML" data-level="87">
+                                <div class="skill-name">XML</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="87"></div>
+                                </div>
+                                <div class="skill-percent">87%</div>
+                            </div>
+                            <div class="skill-item" data-skill="Android SDK" data-level="75">
+                                <div class="skill-name">Android SDK</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                                <div class="skill-percent">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">Web Development</h3>
+                        <div class="skill-items">
+                            <div class="skill-item" data-skill="HTML" data-level="70">
+                                <div class="skill-name">HTML</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="70"></div>
+                                </div>
+                                <div class="skill-percent">70%</div>
+                            </div>
+                            <div class="skill-item" data-skill="CSS" data-level="65">
+                                <div class="skill-name">CSS</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="65"></div>
+                                </div>
+                                <div class="skill-percent">65%</div>
+                            </div>
+                            <div class="skill-item" data-skill="JavaScript" data-level="25">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="25"></div>
+                                </div>
+                                <div class="skill-percent">25%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="category-title">Programming Languages</h3>
+                        <div class="skill-items">
+                            <div class="skill-item" data-skill="C#" data-level="50">
+                                <div class="skill-name">C#</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="25"></div>
+                                </div>
+                                <div class="skill-percent">25%</div>
+                            </div>
+                            <div class="skill-item" data-skill="C++" data-level="20">
+                                <div class="skill-name">C++</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="20"></div>
+                                </div>
+                                <div class="skill-percent">20%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">04</span>
+                    CONTACT
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-container">
+                <div class="cli-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-title">contact@portfolio:~$</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">cat contact.txt</span>
+                        </div>
+                        <div class="terminal-output">
+                            <p>Ready to connect? Fill out the form below:</p>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command typing" id="typing-command"></span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label class="form-label">NAME</label>
+                        <input type="text" class="form-input" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">EMAIL</label>
+                        <input type="email" class="form-input" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">MESSAGE</label>
+                        <textarea class="form-textarea" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <span>SEND MESSAGE</span>
+                        <span class="submit-arrow">→</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 | Built with passion and code</p>
+                <div class="footer-links">
+                    <a href="https://cafebazaar.ir/developer/ali_hsnnzhd" class="footer-link">Bazzar</a>
+                    <a href="https://github.com/Alihsnnzhd" class="footer-link">Github</a>
+                    <a href="mailto:alihassannegad44@gmail.com" class="footer-link">Email</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
