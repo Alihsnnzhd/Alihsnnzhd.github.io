@@ -79,7 +79,7 @@ class ParticleSystem {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
         // Draw connections
-        this.ctx.strokeStyle = 'rgba(0, 245, 255, 0.1)';
+        this.ctx.strokeStyle = 'rgba(92, 240, 209, 0.14)';
         this.ctx.lineWidth = 1;
         
         for (let i = 0; i < this.particles.length; i++) {
@@ -101,7 +101,7 @@ class ParticleSystem {
         // Draw particles
         this.particles.forEach(particle => {
             this.ctx.globalAlpha = particle.opacity;
-            this.ctx.fillStyle = '#00f5ff';
+            this.ctx.fillStyle = '#5cf0d1';
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
             this.ctx.fill();
@@ -256,13 +256,13 @@ class SkillsVisualization {
 class TitleCycler {
     constructor() {
         this.titles = [
-            'Aliasghar Hassanezhad',
-            'Android Developer',
-            'Java Programmer',
-            'Mobile App Designer',
-            'Mobile App Creator',
-            'Software Engineer',
-            'Code Enthusiast'
+            'علی اصغر حسن‌نژاد',
+            'توسعه‌دهنده اندروید',
+            'برنامه‌نویس جاوا',
+            'طراح تجربه کاربری موبایل',
+            'سازنده اپلیکیشن‌های بومی',
+            'مهندس نرم‌افزار',
+            'علاقه‌مند به کدنویسی'
         ];
         this.currentIndex = 0;
         this.currentText = '';
@@ -318,6 +318,32 @@ function animateCounter(element, target, duration = 2000) {
     }, 16);
 }
 
+function initStatCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (statNumbers.length === 0) {
+        return;
+    }
+    
+    // Use IntersectionObserver to trigger animation when stats are visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const stat = entry.target;
+                const target = parseInt(stat.getAttribute('data-target'), 10);
+                if (!isNaN(target) && stat.textContent === '0') {
+                    animateCounter(stat, target);
+                }
+                observer.unobserve(stat);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statNumbers.forEach(stat => {
+        stat.textContent = '0';
+        observer.observe(stat);
+    });
+}
+
 // ============================================
 // SKILL PROGRESS BARS
 // ============================================
@@ -344,10 +370,10 @@ function animateSkillBars() {
 class CLITyping {
     constructor() {
         this.commands = [
-            'send_message --to="portfolio" --subject="collaboration"',
-            'connect --network="professional"',
-            'open --project="opportunity"',
-            'git push --branch="career"'
+            'ping رزومه --channel="همکاری"',
+            'send --message="سلام! آماده گفتگو هستم"',
+            'open --project="فرصت جدید"',
+            'git push --branch="مسیر_حرفه‌ای"'
         ];
         this.currentIndex = 0;
         this.currentText = '';
@@ -355,6 +381,10 @@ class CLITyping {
         this.typeSpeed = 50;
         
         this.element = document.getElementById('typing-command');
+        if (!this.element) {
+            // Element removed (contact form deleted); skip typing effect
+            return;
+        }
         this.type();
     }
 
@@ -388,7 +418,7 @@ class CLITyping {
 // MATRIX EFFECT FOR LOADING
 // ============================================
 function createMatrixEffect() {
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+    const chars = '۰۱۲۳۴۵۶۷۸۹<>[]{}/آابپتثجچحخدذرزسشصضطظعغفقکگلمنوهی';
     const matrixContainer = document.querySelector('.matrix-text');
     
     function generateMatrix() {
@@ -454,30 +484,52 @@ function initScrollAnimations() {
 // ============================================
 function initContactForm() {
     const form = document.getElementById('contact-form');
+    if (!form) {
+        return; // Form doesn't exist, skip initialization
+    }
     
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         
         const submitButton = form.querySelector('.form-submit');
         const originalText = submitButton.innerHTML;
-        
-        submitButton.innerHTML = '<span>SENDING...</span>';
+
+        const name = form.elements['name'].value.trim();
+        const email = form.elements['email'].value.trim();
+        const message = form.elements['message'].value.trim();
+
+        const toAddress = 'alihassannegad44@gmail.com';
+        const subject = `پیام جدید از رزومه - ${name || 'بدون نام'}`;
+        const body = [
+            `نام: ${name || 'وارد نشده'}`,
+            `ایمیل: ${email || 'وارد نشده'}`,
+            '',
+            'متن پیام:',
+            message || '—'
+        ].join('\n');
+
+        const mailtoLink = `mailto:${toAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        submitButton.innerHTML = '<span>در حال آماده‌سازی...</span>';
         submitButton.disabled = true;
-        
-        // Simulate form submission
+
+        // Open default mail client with prefilled email
+        window.location.href = mailtoLink;
+
+        // Quick UI feedback
         setTimeout(() => {
-            submitButton.innerHTML = '<span>MESSAGE SENT ✓</span>';
+            submitButton.innerHTML = '<span>باز شد ✅</span>';
             submitButton.style.borderColor = '#27c93f';
             submitButton.style.color = '#27c93f';
-            
+
             setTimeout(() => {
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
                 submitButton.style.borderColor = '';
                 submitButton.style.color = '';
                 form.reset();
-            }, 2000);
-        }, 1500);
+            }, 1800);
+        }, 800);
     });
 }
 
@@ -543,12 +595,8 @@ function initApp() {
     // Initialize CLI typing
     new CLITyping();
     
-    // Animate counters
-    const statNumbers = document.querySelectorAll('.stat-number');
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.dataset.target);
-        animateCounter(stat, target);
-    });
+    // Animate counters (experience/projects)
+    initStatCounters();
     
     // Animate skill bars
     animateSkillBars();
