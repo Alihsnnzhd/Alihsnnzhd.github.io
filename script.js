@@ -31,6 +31,13 @@ const translations = {
         'skills.web': 'توسعه وب',
         'skills.programming': 'زبان‌های برنامه‌نویسی',
         'social.title': 'ارتباط و شبکه‌ها',
+        'social.email.title': 'ایمیل',
+        'social.github.title': 'گیت هاب',
+        'social.bazzar.title': 'بازار',
+        'social.telegram.title': 'تلگرام',
+        'social.instagram.title': 'اینستاگرام',
+        'footer.title': '۱۴۰۴ | ساخته شده با عشق و کد',
+        'social.title': 'برای همکاری یا گفتگو می‌توانید از لینک‌های زیر استفاده کنید:',
         'title.cycler': ['علی اصغر حسن‌نژاد', 'توسعه‌دهنده اندروید', 'برنامه‌نویس جاوا', 'طراح تجربه کاربری موبایل', 'سازنده اپلیکیشن‌های بومی', 'مهندس نرم‌افزار', 'علاقه‌مند به کدنویسی']
     },
     en: {
@@ -62,6 +69,13 @@ const translations = {
         'skills.web': 'Web Development',
         'skills.programming': 'Programming Languages',
         'social.title': 'CONNECT & NETWORKS',
+        'social.email.title': 'Email',
+        'social.github.title': 'Github',
+        'social.bazzar.title': 'Bazzar',
+        'social.telegram.title': 'Telegram',
+        'social.instagram.title': 'Instagram',
+        'footer.title': 'Made with love and code | 2025',
+        'social.title': 'For collaboration or discussion, you can use the links below:',
         'title.cycler': ['Aliasghar Hassanezhad', 'Android Developer', 'Java Programmer', 'Mobile App Designer', 'Mobile App Creator', 'Software Engineer', 'Code Enthusiast']
     }
 };
@@ -779,5 +793,6 @@ if (document.readyState === 'loading') {
     initLanguageToggle();
     initLoadingScreen();
 }
+
 
 
