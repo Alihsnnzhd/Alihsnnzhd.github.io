@@ -16,6 +16,8 @@ const translations = {
         'experience.title': 'تجربه‌های حرفه‌ای',
         'experience.android.title': 'توسعه‌دهنده اندروید',
         'experience.android.desc': 'توسعه و نگهداشت اپلیکیشن‌های بومی با جاوا و XML، پیاده‌سازی UI/UX واکنش‌گرا، مدیریت ذخیره‌سازی داده و بهینه‌سازی عملکرد. تسلط به Android SDK، متریال دیزاین و معماری‌های مدرن اندروید.',
+        'experience.Network.title': 'شبیه‌سازی و مدل‌سازی شبکه‌های کامپیوتری',
+        'experience.Network.desc': 'طراحی، پیاده‌سازی و شبیه‌سازی زیرساخت‌های شبکه‌ای چندلایه با استفاده از Cisco Packet Tracer. این شامل پیکربندی شبکه‌های LAN/WAN با توپولوژی‌های متنوع، اتصال شبکه‌های مختلف (Subnetting و Supernetting) با کلاس‌های گوناگون IP، و تسلط بر پروتکل‌ها و تجهیزات مسیریابی (Routing) و سوئیچینگ (Switching) است. همچنین، در حوزه اینترنت اشیا (IoT)، توانایی مدل‌سازی سناریوهای IoT، اتصال و مدیریت دستگاه‌های هوشمند، برنامه‌نویسی شرایط منطقی (Conditional Logic) برای کنترل اجسام و شبیه‌سازی ارتباطات پیچیده بین حسگرها و سرورها را دارم.',
         'experience.web.title': 'توسعه‌دهنده وب (یادگیری)',
         'experience.web.desc': 'ساخت رابط‌های وب واکنش‌گرا با HTML، CSS و JavaScript. یادگیری الگوهای بهینه فرانت‌اند و ایجاد تجربه‌های کاربری مدرن و تعاملی.',
         'experience.fundamentals.title': 'مبانی مهندسی نرم‌افزار',
@@ -45,6 +47,8 @@ const translations = {
         'experience.title': 'EXPERIENCE',
         'experience.android.title': 'Android Developer',
         'experience.android.desc': 'Developing native Android applications using Java and XML. Implementing responsive UI/UX designs, managing data persistence, and optimizing app performance. Working with Android SDK, Material Design principles, and modern Android architecture patterns.',
+        'experience.Network.title': 'Computer Network Simulation and Modeling',
+        'experience.Network.desc': 'Designing, implementing, and simulating multi-layered network infrastructures using Cisco Packet Tracer. This includes configuring diverse LAN/WAN networks with various topologies, interconnecting disparate networks (Subnetting and Supernetting) using various IP classes, and mastering Routing and Switching protocols and equipment. Furthermore, in the field of Internet of Things (IoT), I possess the ability to model IoT scenarios, connect and manage smart devices, program Conditional Logic for object control, and simulate complex communications between sensors and servers.',
         'experience.web.title': 'Web Developer (Learning)',
         'experience.web.desc': 'Building responsive websites using HTML, CSS, and JavaScript. Creating modern, interactive user interfaces and learning front-end development best practices.',
         'experience.fundamentals.title': 'Software Engineering Fundamentals',
@@ -775,3 +779,4 @@ if (document.readyState === 'loading') {
     initLanguageToggle();
     initLoadingScreen();
 }
+
