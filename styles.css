@@ -15,7 +15,13 @@
 * {
     margin: 0;
     padding: 0;
+    max-width: 100%;
     box-sizing: border-box;
+}
+
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
 }
 
 html {
@@ -30,7 +36,7 @@ body {
         radial-gradient(circle at 50% 80%, rgba(92, 240, 209, 0.07), transparent 35%),
         linear-gradient(140deg, #05070f 0%, #060916 45%, #070c1c 100%);
     color: var(--text-primary);
-    overflow-x: hidden;
+    overflow-x: auto;
     line-height: 1.6;
     direction: rtl;
     text-align: right;
