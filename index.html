@@ -39,6 +39,7 @@
                 <li><a href="#experience" class="nav-link" data-i18n="nav.experience">تجربه</a></li>
                 <li><a href="#projects" class="nav-link" data-i18n="nav.projects">پروژه‌ها</a></li>
                 <li><a href="#skills" class="nav-link" data-i18n="nav.skills">مهارت‌ها</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">ارتباط</a></li>
             </ul>
             <button id="lang-toggle" class="lang-toggle" aria-label="Change language">
                 <span class="lang-icon">🌐</span>
@@ -383,17 +384,59 @@ public View onCreateView(LayoutInflater inflater,
             </div>
         </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-number">04</span>
+                    <span data-i18n="contact.title">ارتباط با من</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-head">
+                    <div class="contact-badge" data-i18n="contact.badge">پیام مستقیم</div>
+                    <p class="contact-lead" data-i18n="contact.lead">برای همکاری یا گفتگو فرم زیر را تکمیل کنید؛ پیام مستقیماً به ایمیل من ارسال می‌شود.</p>
+                </div>
+                <form class="contact-form" id="contact-form" action="https://formsubmit.co/alihsnnzhd@alihsnnzhd.ir" method="POST">
+                    <input type="hidden" name="_subject" value="پیام جدید از رزومه">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <div class="contact-grid">
+                        <div class="form-group">
+                            <label class="form-label" data-i18n="contact.name.label">نام و نام خانوادگی</label>
+                            <input type="text" class="form-input" name="name" data-i18n="contact.name.placeholder" placeholder="نام شما" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-i18n="contact.email.label">ایمیل</label>
+                            <input type="email" class="form-input" name="email" data-i18n="contact.email.placeholder" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="contact.message.label">پیام</label>
+                        <textarea class="form-textarea" name="message" rows="5" data-i18n="contact.message.placeholder" placeholder="درباره فرصت همکاری یا پروژه‌ات بگو..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <span data-i18n="contact.submit">ارسال</span>
+                        <span class="submit-arrow">→</span>
+                    </button>
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+        </section>
+
         <!-- Social / Footer Section -->
         <section id="social" class="social">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span class="section-number">04</span>
+                    <span class="section-number">05</span>
                     <span data-i18n="social.title">ارتباط و شبکه‌ها</span>
                 </h2>
                 <div class="section-line"></div>
             </div>
             <div class="social-card">
-                <p class="social-lead" data-i18n="social.title">برای همکاری یا گفتگو می‌توانید از لینک‌های زیر استفاده کنید:</p>
+                <p class="social-lead" data-i18n="social.lead">برای همکاری یا گفتگو می‌توانید از لینک‌های زیر استفاده
+                    کنید:</p>
                 <div class="social-links">
                     <a class="social-link" href="mailto:alihassannegad44@gmail.com" target="_blank" rel="noopener">
                         <span class="icon mail">
@@ -439,10 +482,10 @@ public View onCreateView(LayoutInflater inflater,
                     <a class="social-link" href="https://instagram.com/ali_hsnnzhd" target="_blank" rel="noopener">
                         <span class="icon instagram">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
-                                 <path
-                                     d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8zm10 1.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 8.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5zm0 2a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 12 10.5z"
-                                    **fill="#FFFFFF"** />
-                             </svg>
+                                <path
+                                    d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8zm10 1.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 8.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5zm0 2a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 12 10.5z"
+                                    **fill="#FFFFFF" ** />
+                            </svg>
                         </span>
                         <span class="link-text" data-i18n="social.instagram.title">اینستاگرام</span>
                     </a>
@@ -455,9 +498,12 @@ public View onCreateView(LayoutInflater inflater,
             <div class="footer-content">
                 <p data-i18n="footer.title">۱۴۰۴ | ساخته شده با عشق و کد</p>
                 <div class="footer-links">
-                    <a href="https://cafebazaar.ir/developer/ali_hsnnzhd" class="footer-link" data-i18n="social.bazzar.title">بازار</a>
-                    <a href="https://github.com/Alihsnnzhd" class="footer-link" data-i18n="social.github.title">گیت‌هاب</a>
-                    <a href="mailto:alihassannegad44@gmail.com" class="footer-link" data-i18n="social.email.title">ایمیل</a>
+                    <a href="https://cafebazaar.ir/developer/ali_hsnnzhd" class="footer-link"
+                        data-i18n="social.bazzar.title">بازار</a>
+                    <a href="https://github.com/Alihsnnzhd" class="footer-link"
+                        data-i18n="social.github.title">گیت‌هاب</a>
+                    <a href="mailto:alihassannegad44@gmail.com" class="footer-link"
+                        data-i18n="social.email.title">ایمیل</a>
                 </div>
             </div>
         </footer>
@@ -467,6 +513,3 @@ public View onCreateView(LayoutInflater inflater,
 </body>
 
 </html>
-
-
-
