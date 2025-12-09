@@ -1113,4 +1113,8 @@ section {
     section {
         padding: 4.5rem 0;
     }
+
+    .social-links {
+        grid-template-columns: 1fr;
+    }
 }
