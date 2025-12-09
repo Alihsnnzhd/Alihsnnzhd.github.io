@@ -7,6 +7,7 @@ const translations = {
         'nav.experience': 'تجربه',
         'nav.projects': 'پروژه‌ها',
         'nav.skills': 'مهارت‌ها',
+        'nav.contact': 'ارتباط',
         'loading.text': 'در حال راه‌اندازی',
         'hero.title': 'توسعه‌دهنده اندروید',
         'hero.description': 'اپلیکیشن‌های بومی اندروید با جاوا و XML می‌سازم، رابط‌های وب واکنش‌گرا طراحی می‌کنم و روی اصول مهندسی نرم‌افزار و تجربه کاربری تمرکز دارم.',
@@ -31,13 +32,23 @@ const translations = {
         'skills.web': 'توسعه وب',
         'skills.programming': 'زبان‌های برنامه‌نویسی',
         'social.title': 'ارتباط و شبکه‌ها',
+        'social.lead': 'برای همکاری یا گفتگو می‌توانید از لینک‌های زیر استفاده کنید:',
         'social.email.title': 'ایمیل',
         'social.github.title': 'گیت هاب',
         'social.bazzar.title': 'بازار',
         'social.telegram.title': 'تلگرام',
         'social.instagram.title': 'اینستاگرام',
         'footer.title': '۱۴۰۴ | ساخته شده با عشق و کد',
-        'social.title': 'برای همکاری یا گفتگو می‌توانید از لینک‌های زیر استفاده کنید:',
+        'contact.title': 'ارتباط با من',
+        'contact.badge': 'پیام مستقیم',
+        'contact.lead': 'برای همکاری یا گفتگو فرم زیر را تکمیل کنید؛ پیام مستقیماً به ایمیل من ارسال می‌شود.',
+        'contact.name.label': 'نام و نام خانوادگی',
+        'contact.name.placeholder': 'نام شما',
+        'contact.email.label': 'ایمیل',
+        'contact.email.placeholder': 'you@example.com',
+        'contact.message.label': 'پیام',
+        'contact.message.placeholder': 'درباره فرصت همکاری یا پروژه‌ات بگو...',
+        'contact.submit': 'ارسال',
         'title.cycler': ['علی اصغر حسن‌نژاد', 'توسعه‌دهنده اندروید', 'برنامه‌نویس جاوا', 'طراح تجربه کاربری موبایل', 'سازنده اپلیکیشن‌های بومی', 'مهندس نرم‌افزار', 'علاقه‌مند به کدنویسی']
     },
     en: {
@@ -45,6 +56,7 @@ const translations = {
         'nav.experience': 'EXPERIENCE',
         'nav.projects': 'PROJECTS',
         'nav.skills': 'SKILLS',
+        'nav.contact': 'CONTACT',
         'loading.text': 'INITIALIZING...',
         'hero.title': 'ANDROID DEVELOPER',
         'hero.description': 'Crafting native Android applications with Java & XML. Building responsive web interfaces. Exploring the fundamentals of software engineering. Design UI web or mobile applications.',
@@ -69,13 +81,23 @@ const translations = {
         'skills.web': 'Web Development',
         'skills.programming': 'Programming Languages',
         'social.title': 'CONNECT & NETWORKS',
+        'social.lead': 'For collaboration or discussion, you can use the links below:',
         'social.email.title': 'Email',
         'social.github.title': 'Github',
         'social.bazzar.title': 'Bazzar',
         'social.telegram.title': 'Telegram',
         'social.instagram.title': 'Instagram',
         'footer.title': 'Made with love and code | 2025',
-        'social.title': 'For collaboration or discussion, you can use the links below:',
+        'contact.title': 'Contact Me',
+        'contact.badge': 'Direct Message',
+        'contact.lead': 'Fill the form below to reach me directly via email.',
+        'contact.name.label': 'Full Name',
+        'contact.name.placeholder': 'Your name',
+        'contact.email.label': 'Email',
+        'contact.email.placeholder': 'you@example.com',
+        'contact.message.label': 'Message',
+        'contact.message.placeholder': 'Tell me about the opportunity or project...',
+        'contact.submit': 'Send',
         'title.cycler': ['Aliasghar Hassanezhad', 'Android Developer', 'Java Programmer', 'Mobile App Designer', 'Mobile App Creator', 'Software Engineer', 'Code Enthusiast']
     }
 };
@@ -92,7 +114,7 @@ class ParticleSystem {
         this.particles = [];
         this.mouse = { x: 0, y: 0 };
         this.maxParticles = 100;
-        
+
         this.init();
         this.animate();
         this.setupEventListeners();
@@ -123,7 +145,7 @@ class ParticleSystem {
 
     setupEventListeners() {
         window.addEventListener('resize', () => this.resize());
-        
+
         document.addEventListener('mousemove', (e) => {
             this.mouse.x = e.clientX;
             this.mouse.y = e.clientY;
@@ -146,7 +168,7 @@ class ParticleSystem {
             const dx = this.mouse.x - particle.x;
             const dy = this.mouse.y - particle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            
+
             if (distance < 150) {
                 const force = (150 - distance) / 150;
                 particle.vx += dx * force * 0.0001;
@@ -161,17 +183,17 @@ class ParticleSystem {
 
     drawParticles() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        
+
         // Draw connections
         this.ctx.strokeStyle = 'rgba(92, 240, 209, 0.14)';
         this.ctx.lineWidth = 1;
-        
+
         for (let i = 0; i < this.particles.length; i++) {
             for (let j = i + 1; j < this.particles.length; j++) {
                 const dx = this.particles[i].x - this.particles[j].x;
                 const dy = this.particles[i].y - this.particles[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                
+
                 if (distance < 120) {
                     this.ctx.globalAlpha = (120 - distance) / 120 * 0.3;
                     this.ctx.beginPath();
@@ -181,7 +203,7 @@ class ParticleSystem {
                 }
             }
         }
-        
+
         // Draw particles
         this.particles.forEach(particle => {
             this.ctx.globalAlpha = particle.opacity;
@@ -190,7 +212,7 @@ class ParticleSystem {
             this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
             this.ctx.fill();
         });
-        
+
         this.ctx.globalAlpha = 1;
     }
 
@@ -210,7 +232,7 @@ class SkillsVisualization {
         this.ctx = this.canvas.getContext('2d');
         this.skills = [];
         this.animationFrame = 0;
-        
+
         this.init();
         // Store globally for resize handler
         window.skillsVisualization = this;
@@ -233,7 +255,7 @@ class SkillsVisualization {
         skillItems.forEach((item, index) => {
             const skillName = item.dataset.skill;
             const skillLevel = parseInt(item.dataset.level);
-            
+
             this.skills.push({
                 name: skillName,
                 level: skillLevel,
@@ -247,18 +269,18 @@ class SkillsVisualization {
                 distance: skillLevel * 1.5 + 50
             });
         });
-        
+
         this.updatePositions();
     }
 
     updatePositions() {
         const centerX = this.canvas.width / 2;
         const centerY = this.canvas.height / 2;
-        
+
         this.skills.forEach(skill => {
             skill.targetX = centerX + Math.cos(skill.angle) * skill.distance;
             skill.targetY = centerY + Math.sin(skill.angle) * skill.distance;
-            
+
             // Smooth movement
             skill.x += (skill.targetX - skill.x) * 0.1;
             skill.y += (skill.targetY - skill.y) * 0.1;
@@ -267,17 +289,17 @@ class SkillsVisualization {
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        
+
         // Draw connections
         this.ctx.strokeStyle = 'rgba(0, 245, 255, 0.2)';
         this.ctx.lineWidth = 1;
-        
+
         for (let i = 0; i < this.skills.length; i++) {
             for (let j = i + 1; j < this.skills.length; j++) {
                 const dx = this.skills[i].x - this.skills[j].x;
                 const dy = this.skills[i].y - this.skills[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                
+
                 if (distance < 200) {
                     this.ctx.globalAlpha = (200 - distance) / 200 * 0.3;
                     this.ctx.beginPath();
@@ -287,7 +309,7 @@ class SkillsVisualization {
                 }
             }
         }
-        
+
         // Draw skill nodes
         this.skills.forEach(skill => {
             // Glow effect
@@ -297,18 +319,18 @@ class SkillsVisualization {
             );
             gradient.addColorStop(0, `rgba(0, 245, 255, ${skill.brightness})`);
             gradient.addColorStop(1, 'rgba(0, 245, 255, 0)');
-            
+
             this.ctx.fillStyle = gradient;
             this.ctx.beginPath();
             this.ctx.arc(skill.x, skill.y, skill.radius * 2, 0, Math.PI * 2);
             this.ctx.fill();
-            
+
             // Main circle
             this.ctx.fillStyle = `rgba(0, 245, 255, ${skill.brightness})`;
             this.ctx.beginPath();
             this.ctx.arc(skill.x, skill.y, skill.radius, 0, Math.PI * 2);
             this.ctx.fill();
-            
+
             // Skill name
             this.ctx.fillStyle = '#00f5ff';
             this.ctx.font = '12px JetBrains Mono';
@@ -316,7 +338,7 @@ class SkillsVisualization {
             this.ctx.textBaseline = 'middle';
             this.ctx.fillText(skill.name, skill.x, skill.y);
         });
-        
+
         this.ctx.globalAlpha = 1;
     }
 
@@ -324,12 +346,12 @@ class SkillsVisualization {
         this.animationFrame++;
         this.updatePositions();
         this.draw();
-        
+
         // Slow rotation
         this.skills.forEach(skill => {
             skill.angle += 0.0005;
         });
-        
+
         requestAnimationFrame(() => this.animate());
     }
 }
@@ -353,7 +375,7 @@ class TitleCycler {
         this.currentText = '';
         this.isDeleting = false;
         this.typeSpeed = 100;
-        
+
         this.element = document.getElementById('title-cycler');
         if (this.element) {
             this.type();
@@ -364,7 +386,7 @@ class TitleCycler {
 
     type() {
         const currentTitle = this.titles[this.currentIndex];
-        
+
         if (this.isDeleting) {
             this.currentText = currentTitle.substring(0, this.currentText.length - 1);
             this.typeSpeed = 50;
@@ -372,9 +394,9 @@ class TitleCycler {
             this.currentText = currentTitle.substring(0, this.currentText.length + 1);
             this.typeSpeed = 100;
         }
-        
+
         this.element.textContent = this.currentText;
-        
+
         if (!this.isDeleting && this.currentText === currentTitle) {
             this.typeSpeed = 2000; // Pause at end
             this.isDeleting = true;
@@ -383,7 +405,7 @@ class TitleCycler {
             this.currentIndex = (this.currentIndex + 1) % this.titles.length;
             this.typeSpeed = 500;
         }
-        
+
         setTimeout(() => this.type(), this.typeSpeed);
     }
 }
@@ -395,7 +417,7 @@ function animateCounter(element, target, duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -412,7 +434,7 @@ function initStatCounters() {
     if (statNumbers.length === 0) {
         return;
     }
-    
+
     // Use IntersectionObserver to trigger animation when stats are visible
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -426,7 +448,7 @@ function initStatCounters() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     statNumbers.forEach(stat => {
         stat.textContent = '0';
         observer.observe(stat);
@@ -438,7 +460,7 @@ function initStatCounters() {
 // ============================================
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -449,7 +471,7 @@ function animateSkillBars() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     skillBars.forEach(bar => observer.observe(bar));
 }
 
@@ -468,7 +490,7 @@ class CLITyping {
         this.currentText = '';
         this.isDeleting = false;
         this.typeSpeed = 50;
-        
+
         this.element = document.getElementById('typing-command');
         if (!this.element) {
             // Element removed (contact form deleted); skip typing effect
@@ -479,7 +501,7 @@ class CLITyping {
 
     type() {
         const currentCommand = this.commands[this.currentIndex];
-        
+
         if (this.isDeleting) {
             this.currentText = currentCommand.substring(0, this.currentText.length - 1);
             this.typeSpeed = 30;
@@ -487,9 +509,9 @@ class CLITyping {
             this.currentText = currentCommand.substring(0, this.currentText.length + 1);
             this.typeSpeed = 50;
         }
-        
+
         this.element.textContent = this.currentText;
-        
+
         if (!this.isDeleting && this.currentText === currentCommand) {
             this.typeSpeed = 3000;
             this.isDeleting = true;
@@ -498,7 +520,7 @@ class CLITyping {
             this.currentIndex = (this.currentIndex + 1) % this.commands.length;
             this.typeSpeed = 500;
         }
-        
+
         setTimeout(() => this.type(), this.typeSpeed);
     }
 }
@@ -509,7 +531,7 @@ class CLITyping {
 function createMatrixEffect() {
     const chars = '۰۱۲۳۴۵۶۷۸۹<>[]{}/آابپتثجچحخدذرزسشصضطظعغفقکگلمنوهی';
     const matrixContainer = document.querySelector('.matrix-text');
-    
+
     function generateMatrix() {
         let text = '';
         for (let i = 0; i < 100; i++) {
@@ -517,7 +539,7 @@ function createMatrixEffect() {
         }
         return text;
     }
-    
+
     setInterval(() => {
         matrixContainer.textContent = generateMatrix();
     }, 100);
@@ -549,7 +571,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -558,7 +580,7 @@ function initScrollAnimations() {
             }
         });
     }, observerOptions);
-    
+
     const animatedElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -576,50 +598,7 @@ function initContactForm() {
     if (!form) {
         return; // Form doesn't exist, skip initialization
     }
-    
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const submitButton = form.querySelector('.form-submit');
-        const originalText = submitButton.innerHTML;
-
-        const name = form.elements['name'].value.trim();
-        const email = form.elements['email'].value.trim();
-        const message = form.elements['message'].value.trim();
-
-        const toAddress = 'alihassannegad44@gmail.com';
-        const subject = `پیام جدید از رزومه - ${name || 'بدون نام'}`;
-        const body = [
-            `نام: ${name || 'وارد نشده'}`,
-            `ایمیل: ${email || 'وارد نشده'}`,
-            '',
-            'متن پیام:',
-            message || '—'
-        ].join('\n');
-
-        const mailtoLink = `mailto:${toAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        submitButton.innerHTML = '<span>در حال آماده‌سازی...</span>';
-        submitButton.disabled = true;
-
-        // Open default mail client with prefilled email
-        window.location.href = mailtoLink;
-
-        // Quick UI feedback
-        setTimeout(() => {
-            submitButton.innerHTML = '<span>باز شد ✅</span>';
-            submitButton.style.borderColor = '#27c93f';
-            submitButton.style.color = '#27c93f';
-
-            setTimeout(() => {
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-                submitButton.style.borderColor = '';
-                submitButton.style.color = '';
-                form.reset();
-            }, 1800);
-        }, 800);
-    });
+    // No JS submit handling; formsubmit.co will handle the POST
 }
 
 // ============================================
@@ -628,10 +607,10 @@ function initContactForm() {
 function initNavigation() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     window.addEventListener('scroll', () => {
         let current = '';
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
@@ -639,7 +618,7 @@ function initNavigation() {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
@@ -654,10 +633,10 @@ function initNavigation() {
 // ============================================
 function initLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
-    
+
     // Create matrix effect
     createMatrixEffect();
-    
+
     // Hide loading screen after delay
     setTimeout(() => {
         loadingScreen.classList.add('hidden');
@@ -674,34 +653,34 @@ function initLoadingScreen() {
 function initApp() {
     // Initialize particle system
     new ParticleSystem();
-    
+
     // Initialize skills visualization
     new SkillsVisualization();
-    
+
     // Initialize title cycler
     new TitleCycler();
-    
+
     // Initialize CLI typing
     new CLITyping();
-    
+
     // Animate counters (experience/projects)
     initStatCounters();
-    
+
     // Animate skill bars
     animateSkillBars();
-    
+
     // Initialize smooth scroll
     initSmoothScroll();
-    
+
     // Initialize scroll animations
     initScrollAnimations();
-    
+
     // Initialize contact form
     initContactForm();
-    
+
     // Initialize navigation
     initNavigation();
-    
+
     // Handle window resize for skills canvas
     window.addEventListener('resize', () => {
         const skillsViz = window.skillsVisualization;
@@ -714,42 +693,42 @@ function initApp() {
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
-    
+
     // Update HTML attributes
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
     document.body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
-    
+
     // Update font family
     if (lang === 'en') {
         document.body.style.fontFamily = "'Orbitron', 'JetBrains Mono', sans-serif";
     } else {
         document.body.style.fontFamily = "'Vazirmatn', 'JetBrains Mono', sans-serif";
     }
-    
+
     // Update all translatable elements
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang][key]) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.placeholder = translations[lang][key];
-            } else {
-                element.textContent = translations[lang][key];
-            }
+                    element.placeholder = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
         }
     });
-    
+
     // Update glitch text data attribute
     const glitchText = document.querySelector('.glitch-text[data-i18n="hero.title"]');
     if (glitchText && translations[lang]['hero.title']) {
         glitchText.setAttribute('data-text', translations[lang]['hero.title']);
     }
-    
+
     const loadingGlitch = document.querySelector('.glitch-text[data-i18n="loading.text"]');
     if (loadingGlitch && translations[lang]['loading.text']) {
         loadingGlitch.setAttribute('data-text', translations[lang]['loading.text']);
     }
-    
+
     // Update title cycler
     if (window.titleCycler && translations[lang]['title.cycler']) {
         window.titleCycler.titles = translations[lang]['title.cycler'];
@@ -757,7 +736,7 @@ function setLanguage(lang) {
         window.titleCycler.currentText = '';
         window.titleCycler.isDeleting = false;
     }
-    
+
     // Update language toggle button
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
@@ -771,12 +750,12 @@ function setLanguage(lang) {
 function initLanguageToggle() {
     const langToggle = document.getElementById('lang-toggle');
     if (!langToggle) return;
-    
+
     langToggle.addEventListener('click', () => {
         const newLang = currentLang === 'fa' ? 'en' : 'fa';
         setLanguage(newLang);
     });
-    
+
     // Set initial language
     setLanguage(currentLang);
 }
@@ -793,6 +772,3 @@ if (document.readyState === 'loading') {
     initLanguageToggle();
     initLoadingScreen();
 }
-
-
-
