@@ -4,7 +4,7 @@
 const translations = {
     fa: {
         'loading.text': 'در حال راه‌اندازی',
-        'nav.brand': 'علی حسن‌نژاد',
+        'nav.brand': 'Alihsnnzhd',
         'nav.home': 'خانه',
         'nav.experience': 'تجربه',
         'nav.projects': 'پروژه‌ها',
@@ -26,6 +26,8 @@ const translations = {
         'experience.title': 'تجربه‌های حرفه‌ای',
         'experience.android.title': 'توسعه‌دهنده اندروید',
         'experience.android.desc': 'توسعه و نگهداشت اپلیکیشن‌های بومی با جاوا و XML، پیاده‌سازی UI/UX واکنش‌گرا، مدیریت ذخیره‌سازی داده و بهینه‌سازی عملکرد. تسلط به Android SDK، متریال دیزاین و معماری‌های مدرن اندروید.',
+        'experience.network.title': ' شبیه‌سازی شبکه‌های کامپیوتری',
+        'experience.network.desc': 'طراحی، پیاده‌سازی و شبیه‌سازی زیرساخت‌های شبکه‌ای چندلایه با استفاده از Cisco Packet Tracer. این شامل پیکربندی شبکه‌های LAN/WAN با توپولوژی‌های متنوع، اتصال شبکه‌های مختلف (Subnetting و Supernetting) با کلاس‌های گوناگون IP، و تسلط بر پروتکل‌ها و تجهیزات مسیریابی (Routing) و سوئیچینگ (Switching) است. همچنین، در حوزه اینترنت اشیا (IoT)، توانایی مدل‌سازی سناریوهای IoT، اتصال و مدیریت دستگاه‌های هوشمند، برنامه‌نویسی شرایط منطقی (Conditional Logic) برای کنترل اجسام و شبیه‌سازی ارتباطات پیچیده بین حسگرها و سرورها را دارم.',
         'experience.web.title': 'توسعه‌دهنده وب (یادگیری)',
         'experience.web.desc': 'ساخت رابط‌های وب واکنش‌گرا با HTML، CSS و JavaScript. یادگیری الگوهای بهینه فرانت‌اند و ایجاد تجربه‌های کاربری مدرن و تعاملی.',
         'experience.fundamentals.title': 'مبانی مهندسی نرم‌افزار',
@@ -49,7 +51,7 @@ const translations = {
     },
     en: {
         'loading.text': 'INITIALIZING...',
-        'nav.brand': 'Aliasghar HassanNezhad',
+        'nav.brand': 'Alihsnnzhd',
         'nav.home': 'Home',
         'nav.experience': 'Experience',
         'nav.projects': 'Projects',
@@ -60,7 +62,7 @@ const translations = {
         'hero.stats.projects': 'Shipped Projects',
         'hero.scroll': 'Scroll',
         'title.cycler': [
-            'Ali Hassan-Nezhad',
+            'Aliasghar Hassannezhad',
             'Android Developer',
             'Java Programmer',
             'Mobile UX Designer',
@@ -68,9 +70,11 @@ const translations = {
             'Software Engineer',
             'Code Enthusiast'
         ],
-        'experience.title': 'Experience',
+        'experience.title': 'Professional Experience',
         'experience.android.title': 'Android Developer',
         'experience.android.desc': 'Develop and maintain native apps with Java & XML, implement responsive UI/UX, manage data persistence, and optimize performance using Android SDK, Material Design, and modern architectures.',
+        'experience.network.title': 'Computer Network Simulation',
+        'experience.network.desc': 'Designing, implementing, and simulating multi-layered network infrastructures using Cisco Packet Tracer. This includes configuring diverse LAN/WAN networks with various topologies, interconnecting disparate networks (Subnetting and Supernetting) using various IP classes, and mastering Routing and Switching protocols and equipment. Furthermore, in the field of Internet of Things (IoT), I possess the ability to model IoT scenarios, connect and manage smart devices, program Conditional Logic for object control, and simulate complex communications between sensors and servers.',
         'experience.web.title': 'Web Developer (Learning)',
         'experience.web.desc': 'Build responsive web UIs with HTML, CSS, and JavaScript, learning best practices and modern interactive experiences.',
         'experience.fundamentals.title': 'Software Engineering Fundamentals',
