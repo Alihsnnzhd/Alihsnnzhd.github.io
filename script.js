@@ -68,7 +68,7 @@ const translations = {
             'Software Engineer',
             'Code Enthusiast'
         ],
-        'experience.title': 'Professional Experience',
+        'experience.title': 'Experience',
         'experience.android.title': 'Android Developer',
         'experience.android.desc': 'Develop and maintain native apps with Java & XML, implement responsive UI/UX, manage data persistence, and optimize performance using Android SDK, Material Design, and modern architectures.',
         'experience.web.title': 'Web Developer (Learning)',
